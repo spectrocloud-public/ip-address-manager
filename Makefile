@@ -22,7 +22,7 @@ SHELL:=/usr/bin/env bash
 
 # Fips Flags
 FIPS_ENABLE ?= ""
-BUILDER_GOLANG_VERSION ?= 1.23
+BUILDER_GOLANG_VERSION ?= 1.26.7
 BUILD_ARGS = --build-arg CRYPTO_LIB=${FIPS_ENABLE} --build-arg BUILDER_GOLANG_VERSION=${BUILDER_GOLANG_VERSION}
 
 RELEASE_LOC := release
@@ -38,7 +38,7 @@ ALL_ARCH = amd64 arm64
 
 REGISTRY ?= gcr.io/spectro-dev-public/$(USER)/${RELEASE_LOC}
 
-GO_VERSION ?= 1.23.6
+GO_VERSION ?= 1.26.7
 # Use GOPROXY environment variable if set
 GOPROXY := $(shell go env GOPROXY)
 ifeq ($(GOPROXY),)
